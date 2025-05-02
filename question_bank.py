@@ -10,13 +10,22 @@ questions = {
     "Science": [
         ("What is the chemical symbol for water?", "H2O"),
         # Add more questions as tuples (question, answer)
-    ],
+    ],"sports":["who is goat of football","ronaldo"],
+    "arts":["who is best artist","mad"],
+    "horror":["which is the most horror movie","twilight"],
+    "comic":["most funny movie","mr bean"]
+
 }
 
 hints = {
-    "Science": [
+    "Science": ["life"],
+    "sports":["ro"],
+    "arts":["paint"]
+    "horror":["woo "]
+    "comin:["hahhahahahhah"]
+
         # Pair each question with a corresponding hint.
-    ],
+   
     # Repeat for other categories as needed.
 }
 
@@ -34,6 +43,10 @@ def select_random_question(category):
     """
     #------------------------
     # Add your code here
+    
+         if catagory not found in questions:
+            return catagory[question]
+
     #------------------------
     raise NotImplementedError("This function is not implemented yet.")
     #------------------------
@@ -53,6 +66,11 @@ def check_answer(player_answer, correct_answer):
     """
     #------------------------
     # Add your code here
+    if player_answer==correct_answer:
+        return True 
+    else:
+        return False
+
     #------------------------
     raise NotImplementedError("This function is not implemented yet.")
     #------------------------
@@ -72,6 +90,9 @@ def remove_question(category, question):
     """
     #------------------------
     # Add your code here
+    if question in catagory and question in question[catagory]:
+        question[catagory].pop(question)
+
     #------------------------
     raise NotImplementedError("This function is not implemented yet.")
     #------------------------
@@ -90,6 +111,9 @@ def display_question_and_accept_answer(question):
     """
     #------------------------
     # Add your code here
+    print(question)
+    answer=input()
+    return answer
     #------------------------
     raise NotImplementedError("This function is not implemented yet.")
     #------------------------
@@ -109,6 +133,8 @@ def provide_hint(category, question):
     """
     #------------------------
     # Add your code here
+    if question in question[catagory]:
+        return hint
     #------------------------
     raise NotImplementedError("This function is not implemented yet.")
     #------------------------
@@ -127,6 +153,8 @@ def display_correct_answer(correct_answer):
     """
     #------------------------
     # Add your code here
+    if answer != correct_answer:
+        print(correct_answer)
     #------------------------
     raise NotImplementedError("This function is not implemented yet.")
     #------------------------
